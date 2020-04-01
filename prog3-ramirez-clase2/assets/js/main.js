@@ -80,7 +80,8 @@ const alumnxs = [
 
     //5
 
-    console.log("5 - no entiendo la consigna");
+    const {nombre,...otrosCampos} = alumnxs [0];
+    console.log("5 - primer alumno:", nombre);
 
     //6
 

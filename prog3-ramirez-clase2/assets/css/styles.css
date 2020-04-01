@@ -1,2 +1,4 @@
-body{background-color:#fff;color:#fff;}
+body{background-color:rgb(29, 28, 28);color:rgb(153, 206, 162);
+    font-family: monospace;
+}
 #loader{display:none;}

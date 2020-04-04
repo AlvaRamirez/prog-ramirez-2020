@@ -1,0 +1,228 @@
+
+#fondo {
+    background-image: url(img/fondo.gif);
+    background-attachment: fixed;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    padding: 40px;
+    text-align: center;
+}
+main{
+    background-color: rgb(16, 17, 16);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.section {
+    
+    background-color: rgb(16, 17, 16);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 0%;
+}
+
+*{
+    outline: none;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    margin:0 auto;
+    padding: 0%;
+    max-width: 100% !important;
+    
+}
+    
+
+        h3{
+        font-size: 100%;
+            font-weight: 400;
+            font-size: 12px;
+        }
+        
+        h2 {
+            font-weight: 800 !important;
+            font-size: 16px;
+            width: 100%;
+            text-transform: uppercase;
+        }
+                                  
+      
+        .columns:not(.is-desktop) {
+            display: flex;
+            padding: 70px;
+            margin-top: 2%;
+        }
+
+#logo{
+    margin-top: 3.5%;
+    width: 15%;
+    transition: 0.3s all;
+    cursor: pointer;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
+}
+
+#logo:hover {
+    transform: scale(0.9) !important;
+    cursor: pointer;
+}
+
+    
+
+button{
+    background: none;
+    padding: 0px;
+    margin: 0 px;
+    margin: 0px;
+    border: 0px;
+}
+
+.card-image {
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.subtitle{
+        text-align: center;
+        margin: 0 auto;
+        /* padding-top: 15px !important; */
+        transition: 0.5s;
+        padding: 20px;
+        font-size: 12px;
+        color: gray;
+        cursor: default;
+        outline: none;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        margin-bottom: 0% !important;
+    
+}
+
+.subtitle:hover{
+    transform: rotateY(20deg);
+   
+}
+
+
+.button.is-info{ 
+    background-color: #238b34 !important;
+    transition: 0.3s all;
+}
+
+.button.is-info:hover{
+    background-color: #408b23 !important;
+}
+
+.button.is-info:active{
+    transform: scale(0.9);
+}
+
+.field.is-grouped {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 3em;
+    width: 50%;
+    align-items: center;
+    margin: 0 auto;
+    padding-bottom: 3em;
+}
+
+.image img {
+    height: auto;
+    width: 82% !important;
+    padding: 20px;
+    height: auto !important;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 17em;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
+    
+
+    }
+
+
+    .card {
+        background-color: #343533;
+        box-shadow: 0 0.5em 1em -0.125em rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.02);
+        color: #4a4a4a;
+        max-width: 100%;
+        position: relative;
+        border-radius: 3%;
+        -webkit-box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.75);
+        box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.75);
+        transition: 0.3s all;
+    }
+
+    .card:hover{
+
+        background-color: #414240;
+        transform: scale(1.1);
+    }
+
+    .media {
+        align-items: flex-start;
+        text-align: center;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .media-content {
+        flex-basis: auto;
+        margin: 0 auto;
+        background: #0000008c;
+        padding: 10px;
+        border-radius: 10px;
+        color: gainsboro;
+        font-size: 12px;
+    }
+    
+
+    h2{
+        font-weight: 800 !important;
+        font-size: 14px;
+    }
+    
+    .portal {
+        max-width: 30% !important;
+        margin: 25px;
+        margin-bottom: 0px;
+        border-radius: 3em;
+        transition: 3s all;
+        cursor: pointer;
+    }
+
+    .portal:hover{
+        transform: rotate(999deg);
+        transition: 3s all;
+        cursor: pointer ;
+    }
+
+
+.column.is-one-quarter, .column.is-one-quarter-tablet {
+    flex: none;
+    width: 26%;
+    /* line-height: 2; */
+    margin: 0 auto;
+    padding-bottom: 3em;
+}

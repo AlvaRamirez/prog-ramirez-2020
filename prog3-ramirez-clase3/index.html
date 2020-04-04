@@ -3,274 +3,71 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Pikle Riick</title>
+    <title>Rick and Morty.</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon"/>
+    <link href="assets/styles.css" rel="stylesheet" type="text/css">
+
   </head>
 
-  <style>
-
-  </style>
-
   <body>
-  <section class="section">
-    <div class="container">
-        <nav class="navbar" role="navigation" aria-label="main navigation">
-            <div class="navbar-brand">
-              <a class="navbar-item" href="https://bulma.io">
-                <img src= http://www.stickpng.com/assets/images/58f37709a4fa116215a9240d.png width="50">
-              </a>
-          
-              <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-              </a>
-            </div>
-          
-            <div id="navbarBasicExample" class="navbar-menu">
-              <div class="navbar-start">
-                <a class="navbar-item">
-                  Home
-                </a>
-          
-                <a class="navbar-item">
-                  Documentation
-                </a>
-          
-                <div class="navbar-item has-dropdown is-hoverable">
-                  <a class="navbar-link">
-                    More
-                  </a>
-          
-                  <div class="navbar-dropdown">
-                    <a class="navbar-item">
-                      About
-                    </a>
-                    <a class="navbar-item">
-                      Jobs
-                    </a>
-                    <a class="navbar-item">
-                      Contact
-                    </a>
-                    <hr class="navbar-divider">
-                    <a class="navbar-item">
-                      Report an issue
-                    </a>
-                  </div>
-                </div>
-              </div>
-          
-              <div class="navbar-end">
-                <div class="navbar-item">
-                  <div class="buttons">
-                    <a class="button is-primary">
-                      <strong>Sign up</strong>
-                    </a>
-                    <a class="button is-light">
-                      Log in
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </nav>
-      <h1 class="title">
+    <div></div>
+    <main>
       
-      </h1>
-      <p class="subtitle">
-        <br>
-      </p>
+  <section class="section">
+    
+    
+    <div class="container">
+      <div id="fondo">
+  
+     
+      <img id="logo" src="assets/img/logo.png" >
       <div class="field is-grouped">
-        <p class="control is-expanded">
-          <input class="input" type="text" placeholder="Find a repository">
-        </p>
-        <p class="control">
-          <a class="button ">
-            Search
-          </a>
-        </p>
+     
+          <p class="control is-expanded">
+              <input class="input input_search" type="text" placeholder="Find a character">
+          </p>
+          <p class="control">
+          
+              <a class="button is-info handle_search">
+                  Search
+              </a>
+            
+          </p>
       </div>
-
-            <!--<div class="columns is-multiline grid">
-                <div class="column is-one-quarter">
-                First column
-                <div class="card">
-                    <div class="card-image">
-                      <figure class="image is-4by3">
-                        <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                      </figure>
-                    </div>
-                    <div class="card-content">
-                      <div class="media">
-                        <div class="media-left">
-                          <figure class="image is-48x48">
-                            <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-                          </figure>
-                        </div>
-                        <div class="media-content">
-                          <p class="title is-4">John Smith</p>
-                        </div>
-                        <div class="container">
-                            <button class="button is-dark">Dark</button>
-                        </div>
-                      </div>
-                  
-                    </div>
-                  </div>
-                </div>
-                <div class="column is-one-quarter">
-                Second column
-                <div class="card">
-                    <div class="card-image">
-                      <figure class="image is-4by3">
-                        <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                      </figure>
-                    </div>
-                    <div class="card-content">
-                      <div class="media">
-                        <div class="media-left">
-                          <figure class="image is-48x48">
-                            <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-                          </figure>
-                        </div>
-                        <div class="media-content">
-                          <p class="title is-4">John Smith</p>
-                        </div>
-                        <div class="container">
-                            <button class="button is-dark">Dark</button>
-                        </div>
-                      </div>
-                  
-                    </div>
-                  </div>
-                </div>
-                <div class="column is-one-quarter">
-                Third column
-                <div class="card">
-                    <div class="card-image">
-                      <figure class="image is-4by3">
-                        <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                      </figure>
-                    </div>
-                    <div class="card-content">
-                      <div class="media">
-                        <div class="media-left">
-                          <figure class="image is-48x48">
-                            <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-                          </figure>
-                        </div>
-                        <div class="media-content">
-                          <p class="title is-4">John Smith</p>
-                        </div>
-                        <div class="container">
-                            <button class="button is-dark">Dark</button>
-                        </div>
-                      </div>
-                  
-                    </div>
-                  </div>
-                </div>
-                <div class="column is-one-quarter">
-                Fourth column
-                <div class="card">
-                    <div class="card-image">
-                      <figure class="image is-4by3">
-                        <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                      </figure>
-                    </div>
-                    <div class="card-content">
-                      <div class="media">
-                        <div class="media-left">
-                          <figure class="image is-48x48">
-                            <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-                          </figure>
-                        </div>
-                        <div class="media-content">
-                          <p class="title is-4">John Smith</p>
-                        </div>
-                        <div class="container">
-                            <button class="button is-dark">Dark</button>
-                        </div>
-                      </div>
-                  
-                    </div>
-                    
-                  </div>
-                  
-                </div>
-                
-            <div class="column is-one-quarter">
-                Third column
-                <div class="card">
-                    <div class="card-image">
-                      <figure class="image is-4by3">
-                        <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                      </figure>
-                    </div>
-                    <div class="card-content">
-                      <div class="media">
-                        <div class="media-left">
-                          <figure class="image is-48x48">
-                            <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-                          </figure>
-                        </div>
-                        <div class="media-content">
-                          <p class="title is-4">John Smith</p>
-                        </div>
-                        <div class="container">
-                            <button class="button is-dark">Dark</button>
-                        </div>
-                      </div>
-                  
-                    </div>
-                  </div>
-                </div>
-
-                
-            <div class="column is-one-quarter">
-                Third column
-                <div class="card">
-                    <div class="card-image">
-                      <figure class="image is-4by3">
-                        <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                      </figure>
-                    </div>
-                    <div class="card-content">
-                      <div class="media">
-                        <div class="media-left">
-                          <figure class="image is-48x48">
-                            <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-                          </figure>
-                        </div>
-                        <div class="media-content">
-                          <p class="title is-4">John Smith</p>
-                        </div>
-                        <div class="container">
-                            <button class="button is-dark">Dark</button>
-                        </div>
-                      </div>
-                  
-                    </div>
-                  </div>
-                </div>
-            </div>-->
-
     </div>
+    
+      <div class="columns is-multiline grid">
 
+      </div>
+  </div>
+    </div>
+  
   </section>
   
+
+  <div class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+        <!-- Any other Bulma elements you want -->
+        <p>ESTE ES MI MODAL FUCKIN BULMA</p>
+    </div>
+    <button class="modal-close is-large" aria-label="close"></button>
+</div>
+
+<p class="subtitle"> By Alva Ramírez </p>
+
   <script>
 
-const CardItem = props => { 
 
-const{image, name, species, origin} = props;
-const {name: planet, url} = origin;
+const CardItem = props => {
+            const { image, name, species, origin } = props;
+            const { name: planet, url } = origin;
 
 return `
 
 <div class="column is-one-quarter">
-        First column
         <div class="card">
             <div class="card-image">
               <figure class="image is-4by3">
@@ -280,17 +77,15 @@ return `
             <div class="card-content">
               <div class="media">
                 <div class="media-left">
-                  <figure class="image is-48x48">
-                    <img src=${image} alt="Placeholder image">
-                  </figure>
                 </div>
                 <div class="media-content">
-                  <p class="title is-4">${name}</p>
-                  <p class="title is-4">${species}</p>
-                  <p class="title is-4">${planet}</p>
+                  <h2 >${name}</h2>
+                  <h3>${species}</h3>
+                  
                 </div>
-                <div class="container">
-                    <button class="button is-dark" open_modal>Dark</button>
+                <div class="content">
+                <div class="buttons">
+                  <button is-primary open_modal> <img class="portal" src='assets/img/portal.png'></button>
                 </div>
               </div>
           
@@ -300,84 +95,85 @@ return `
 
 }
 
-    //prueba
-   /* const $grid = document.queryCommandEnabled('.grid');
-    const cardElement = CardItem ({image: '', name: 'Alva', species: 'Human', origin: {name: 'Eart'}});
 
-    setTimeout (() =>{
-        $grid.innerHTML += cardElement;
-    }, 5000);*/
+    //Aca se toman los personajes en el rango que le determine (del 1 al 21 en este caso)
+    const getCharacters = async (baseURL, from, to) => {
+            //Array.from({length: 5}, (v, i) => i);
+            const charactersRange = Array.from({ length: to - from + 1 }, (_, index) => index + 1).join(',');
+            const url = `${baseURL}character/${charactersRange}`;
+            const response = await fetch(url);
+            const characters = await response.json();
 
-    const getCharacters = async (baseURL, from, to) =>{
-        //Array.from (length: 5), (v, i)=> i);
-        const charactersRange = Array.from({length: to - from + 1}, (_,index)=>index + 1).join(',');
-        const url = `${baseURL} character/${charactersRange}`;
-        const response= await fetch(url);
-        const characters= await response.json();
-      
-        return characters
-        
-    }
+            return characters
+        }
 
+
+    //Se "linkean" los resultados con sus respectivas busquedas
     const getCharactersByQuery= async (baseURL, query) => {
-    const url= `${baseURL}/character/name=${query}`;
+    const url= `${baseURL}/character/?name=${query}`;
+    const response = await fetch(url);
+    const characters = await response.json();
+
+    return characters
 
 
     }
 
     
-
-    const appendElements = (characters, emptyGrid) => {
+    //Se agregan los elementos del DOM
+       const appendElements = (characters, emptyGrid) => {
             const $grid = document.querySelector('.grid');
-            if (emptyGrid) {
-                $grid.innerHTML = null;
-            }
+            if (emptyGrid) { $grid.innerHTML = null; }
             characters.forEach(character => {
                 const cardItemHtml = CardItem(character);
                 $grid.innerHTML += cardItemHtml;
             });
+
+          
         }
-    //parte 1
-    const main = async () =>{
-
-    const baseURL= "https://rickandmortyapi.com/api";
-
-    const characters= getCharacters = await getCharacters (baseURL , 1 , 20);
-    console.log(characters);
-    appendElements(characters);
-
-    //parte 2
-    const $submit = document.querySelector('.handle_serch');
-    $submit.addEventListener('click', async (event)=>{
-        event.preventDefault();
-    const $input= document.querySelector ('.input_search');
-    const valor =$input.value;
-
-        const getCharactersByQuery= await getCharactersByQuery(baseURL, valor);
-        const url= `${baseURL}/character/name=${query}`;
-        appendElements(getCharactersByQuery.results ,true)
 
 
-    })
+       const main = async () => {
 
-    const $modal= document.querySelector('.open_modal');
-    const $modal = document.querySelector('.modal');
-    const $modalClose= document.querySelector('.modal-close');
+            const baseURL = 'https://rickandmortyapi.com/api/';
 
-    $modalOpen.addEventListener('click'() =>{
-        $modal.classList.add("is-active");
-        console.log('click')
-    })
+            // Parte 1: obtener elementos de la api y mostrarlos en el dom
+            const characters = await getCharacters(baseURL, 1, 21);
+            console.log(characters)
+            appendElements(characters)
 
-})
+            //parte 2: crear un buscador de personajes
+            const $submit = document.querySelector('.handle_search');
+            $submit.addEventListener('click', async (event) => {
+                event.preventDefault();
+                const $input = document.querySelector('.input_search');
+                const valor = $input.value;
 
+                const charactersByQuery = await getCharactersByQuery(baseURL, valor);
+                console.log(charactersByQuery.results)
+                appendElements(charactersByQuery.results, true)
 
+            })
 
+            //Modal
+            const $modalOpenArr = document.querySelectorAll('.open_modal');
+            const $modal = document.querySelector('.modal');
+            const $modalClose = document.querySelector('.modal-close');
+            $modalOpenArr.forEach((boton) => {
+                boton.addEventListener('click', () => {
+                    $modal.classList.add("is-active");
+                    console.log('click')
+                })
+            })
+            $modalClose.addEventListener('click', () => {
+                $modal.classList.remove("is-active");
+            })
 
-main ();
+        }
 
+        main();
 
 </script>
-
+</main>
   </body>
 </html>

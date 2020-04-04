@@ -113,21 +113,68 @@ const alumnxs = [
     values(): devuelve un iterable con los valores del mapa.
     entries(): devuelve un iterable con matrices [value, value] (es equivalente al mismo método en Map, pero devuelve el valor dos veces).
     clear(): elimina todos los valores del objeto Set.*/
+
+const suColor = ['Azul francia', 'Verde menta', 'Rojo pasion', 'Esmeralda', 'Caki', 'Negro opaco', 'Indigo reflectante', 'Violeta agresivo', 'Amarillo a Secas', 'Rosa claro'];
+const new_key = alumnxs.map((student, index) => {
+    student.color = suColor[index];
+    return student;
+});
+
+console.log( "7 - alumnos con nuevo atributo", alumnxs);
+
+
    //8
 
         const promedio=() => { return edades / alumnxs.length;
         }
         console.log("8 - promedio entre edades y alumnos",promedio());
-
+        
 
     //9
+        console.log("9 - API: 'https://dog.ceo/api/breeds/image/random'");
 
+    //10 
+    function getDataWithPromises(){
             fetch('https://dog.ceo/api/breeds/image/random')
             .then(function(response) {
                 return response.json();
             })
-            .then(function(myJson) {
-                console.log(myJson);
+            .then(menssage=>{
+                console.log("10/11 - me trae esto", menssage);
             });
+        }
 
-    //10
+        getDataWithPromises();
+
+
+        //11
+
+        async function requestData(){
+            const dog_response = await fetch('https://dog.ceo/api/breeds/image/random');
+            const menssage = await dog_response.json();
+            return menssage;
+        }
+        
+        const mainLogic = async () => {
+            const menssage = await requestData(); 
+            console.log("la data traída: ", menssage);
+        }
+
+        //12 - 13
+        const getDataWithAsync = async () => {
+            try{
+                const menssage = await requestData();
+                const imprimir = menssage.map( ({menssage})=>{
+        
+                    const divContent = document.querySelector('#content');
+                    const html = '<img width="40%" src= https://dog.ceo/api/breeds/image/random'+menssage+'></img></div>';
+                    divContent.insertAdjacentHTML('beforeend', html);
+                })
+            }
+            catch(error){
+                console.error(error);
+                const divContent = document.querySelector('#content');
+                divContent.innerHTML('El error es: '+error);
+            }
+        }
+        getDataWithAsync();

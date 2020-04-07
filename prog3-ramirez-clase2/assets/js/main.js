@@ -130,51 +130,40 @@ console.log( "7 - alumnos con nuevo atributo", alumnxs);
         console.log("8 - promedio entre edades y alumnos",promedio());
         
 
-    //9
-        console.log("9 - API: 'https://dog.ceo/api/breeds/image/random'");
-
-    //10 
-    function getDataWithPromises(){
-            fetch('https://dog.ceo/api/breeds/image/random')
-            .then(function(response) {
-                return response.json();
-            })
-            .then(menssage=>{
-                console.log("10/11 - me trae esto", menssage);
-            });
-        }
-
-        getDataWithPromises();
-
-
-        //11
-
-        async function requestData(){
-            const dog_response = await fetch('https://dog.ceo/api/breeds/image/random');
-            const menssage = await dog_response.json();
-            return menssage;
-        }
-        
-        const mainLogic = async () => {
-            const menssage = await requestData(); 
-            console.log("la data traída: ", menssage);
-        }
-
-        //12 - 13
-        const getDataWithAsync = async () => {
-            try{
-                const menssage = await requestData();
-                const imprimir = menssage.map( ({menssage})=>{
-        
-                    const divContent = document.querySelector('#content');
-                    const html = '<img width="40%" src= https://dog.ceo/api/breeds/image/random'+menssage+'></img></div>';
-                    divContent.insertAdjacentHTML('beforeend', html);
-                })
-            }
-            catch(error){
-                console.error(error);
-                const divContent = document.querySelector('#content');
-                divContent.innerHTML('El error es: '+error);
-            }
-        }
-        getDataWithAsync();
+   //9
+   console.log("9 - API: 'https://dog.ceo/api/breeds/image/random'");
+   //10 
+   function getDataWithPromises(){
+           fetch('https://dog.ceo/api/breeds/image/random')
+           .then(response => response.json())
+           .then(menssage=>{
+               console.log("10/11 - me trae esto", menssage);
+           });
+       }
+       getDataWithPromises();
+       //11
+       async function requestData(){
+           const dog_response = await fetch('https://dog.ceo/api/breeds/image/random');
+           const menssage = await dog_response.json();
+           return menssage;
+       }
+       
+       const mainLogic = async () => {
+           const menssage = await requestData(); 
+           console.log("la data traída: ", menssage);
+       }
+       //12 - 13
+       const getDataWithAsync = async () => {
+           try{
+               const respuesta = await requestData();
+               const divContent = document.querySelector('#content');
+               const html = '<img width="40%" src='+respuesta.message+'></img></div>';
+               divContent.insertAdjacentHTML('beforeend', html);
+           }
+           catch(error){
+               console.error(error);
+               const divContent = document.querySelector('#content');
+               divContent.innerHTML('El error es: '+error);
+           }
+       }
+       getDataWithAsync();

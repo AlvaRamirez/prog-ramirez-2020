@@ -8,11 +8,12 @@
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon"/>
     <link href="assets/styles.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="assets/animate.css">
 
   </head>
 
   <body>
-    <div></div>
+
     <main>
       
   <section class="section">
@@ -22,11 +23,11 @@
       <div id="fondo">
   
      
-      <img id="logo" src="assets/img/logo.png" >
+     <button><img  id="logo" src="assets/img/logo.png" ></button> 
       <div class="field is-grouped">
      
           <p class="control is-expanded">
-              <input class="input input_search" type="text" placeholder="Find a character">
+              <input class="input input_search" type="text">
           </p>
           <p class="control">
           
@@ -47,14 +48,8 @@
   </section>
   
 
-  <div class="modal">
-    <div class="modal-background"></div>
-    <div class="modal-content">
-        <!-- Any other Bulma elements you want -->
-        <p>ESTE ES MI MODAL FUCKIN BULMA</p>
-    </div>
-    <button class="modal-close is-large" aria-label="close"></button>
-</div>
+  
+        
 
 <p class="subtitle"> By Alva Ramírez </p>
 
@@ -68,8 +63,8 @@ const CardItem = props => {
 return `
 
 <div class="column is-one-quarter">
-        <div class="card">
-            <div class="card-image">
+        <div class="card animated bounceInUp">
+            <div class="card-image ">
               <figure class="image is-4by3">
                 <img src=${image} alt="Placeholder image">
               </figure>
@@ -81,22 +76,40 @@ return `
                 <div class="media-content">
                   <h2 >${name}</h2>
                   <h3>${species}</h3>
-                  
+        </div> 
                 </div>
+                
                 <div class="content">
                 <div class="buttons">
-                  <button is-primary open_modal> <img class="portal" src='assets/img/portal.png'></button>
+                  <button class= "is-primary open_modal"> <img class="portal" src='assets/img/portal.png'></button>
                 </div>
               </div>
           
+              <div class="modal">
+    <div class="modal-background animated fadeIn"></div>
+    <div class="modal-content animated zoomIn">
+      
+        <div class="planeta">
+         <h2> ${planet} </h2>
+      </div>
+
+    </div>
+    <button class="modal-close is-large" aria-label="close"></button>
+
             </div>
           </div>
-        </div> `
+ 
+</div>
+
+
+</div>
+
+        `
 
 }
 
 
-    //Aca se toman los personajes en el rango que le determine (del 1 al 21 en este caso)
+    //Aca se toman los personajes en el rango que le determine (del 1 al 20 en este caso)
     const getCharacters = async (baseURL, from, to) => {
             //Array.from({length: 5}, (v, i) => i);
             const charactersRange = Array.from({ length: to - from + 1 }, (_, index) => index + 1).join(',');
@@ -107,6 +120,7 @@ return `
             return characters
         }
 
+     
 
     //Se "linkean" los resultados con sus respectivas busquedas
     const getCharactersByQuery= async (baseURL, query) => {
@@ -123,7 +137,7 @@ return `
     //Se agregan los elementos del DOM
        const appendElements = (characters, emptyGrid) => {
             const $grid = document.querySelector('.grid');
-            if (emptyGrid) { $grid.innerHTML = null; }
+            if (emptyGrid) { $grid.innerHTML = null;}
             characters.forEach(character => {
                 const cardItemHtml = CardItem(character);
                 $grid.innerHTML += cardItemHtml;
@@ -138,7 +152,7 @@ return `
             const baseURL = 'https://rickandmortyapi.com/api/';
 
             // Parte 1: obtener elementos de la api y mostrarlos en el dom
-            const characters = await getCharacters(baseURL, 1, 21);
+            const characters = await getCharacters(baseURL, 1, 20);
             console.log(characters)
             appendElements(characters)
 
@@ -152,8 +166,11 @@ return `
                 const charactersByQuery = await getCharactersByQuery(baseURL, valor);
                 console.log(charactersByQuery.results)
                 appendElements(charactersByQuery.results, true)
+                
 
             })
+
+        
 
             //Modal
             const $modalOpenArr = document.querySelectorAll('.open_modal');
@@ -168,9 +185,22 @@ return `
             $modalClose.addEventListener('click', () => {
                 $modal.classList.remove("is-active");
             })
-
+ 
         }
 
+        function refresh(){
+              document.getElementById("logo").onclick= function(){
+                $("div").remove("card");
+                console.log("click");
+              };           
+              
+        }
+       /* return 
+             $("#refresh").click(function(){
+              $("div").remove(".card");
+              console.log("listo");
+             });
+             */
         main();
 
 </script>

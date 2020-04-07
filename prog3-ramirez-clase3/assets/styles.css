@@ -1,6 +1,6 @@
 
 #fondo {
-    background-image: url(img/fondo.gif);
+    background-image: url(img/fondo.jpg);
     background-attachment: fixed;
     background-position: bottom;
     background-repeat: no-repeat;
@@ -10,10 +10,17 @@
     overflow: hidden;
     padding: 40px;
     text-align: center;
+    -webkit-box-shadow: 0px 5px 10px 1px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 5px 10px 1px rgba(0,0,0,0.75);
+box-shadow: 0px 5px 10px 1px rgba(0,0,0,0.75);
 }
 main{
     background-color: rgb(16, 17, 16);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.columns{ 
+    margin: 0 auto;
 }
 
 .section {
@@ -44,20 +51,22 @@ main{
         
         h2 {
             font-weight: 800 !important;
-            font-size: 16px;
+            font-size: 13px;
             width: 100%;
             text-transform: uppercase;
+            line-height: 2;
         }
-                                  
+                        
+        
       
         .columns:not(.is-desktop) {
-            display: flex;
+            /* display: flex; */
             padding: 70px;
-            margin-top: 2%;
+            padding-bottom: 0px;
         }
-
+        
 #logo{
-    margin-top: 3.5%;
+    margin-top: 3;
     width: 15%;
     transition: 0.3s all;
     cursor: pointer;
@@ -75,7 +84,9 @@ main{
     cursor: pointer;
 }
 
-    
+.modal-background {
+    background-color: rgba(10, 10, 10, 0.94) !important;
+}
 
 button{
     background: none;
@@ -166,18 +177,25 @@ button{
         box-shadow: 0 0.5em 1em -0.125em rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.02);
         color: #4a4a4a;
         max-width: 100%;
-        position: relative;
+        /* position: relative; */
         border-radius: 3%;
         -webkit-box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.75);
         -moz-box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.75);
         box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.75);
         transition: 0.3s all;
+        
     }
 
     .card:hover{
 
         background-color: #414240;
-        transform: scale(1.1);
+
+    }
+
+    .planeta{
+        text-align: center;
+        margin: 0 auto;
+        color: white;
     }
 
     .media {
@@ -198,16 +216,11 @@ button{
     }
     
 
-    h2{
-        font-weight: 800 !important;
-        font-size: 14px;
-    }
-    
     .portal {
         max-width: 30% !important;
         margin: 25px;
         margin-bottom: 0px;
-        border-radius: 3em;
+        border-radius: 6em;
         transition: 3s all;
         cursor: pointer;
     }
@@ -219,10 +232,10 @@ button{
     }
 
 
-.column.is-one-quarter, .column.is-one-quarter-tablet {
-    flex: none;
-    width: 26%;
-    /* line-height: 2; */
-    margin: 0 auto;
-    padding-bottom: 3em;
-}
+    .column.is-one-quarter, .column.is-one-quarter-tablet {
+        flex: none;
+        /* width: 25%; */
+        /* line-height: 2; */
+        margin: 0 auto;
+        padding-bottom: 3em;
+    }

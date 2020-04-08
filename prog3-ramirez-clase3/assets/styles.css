@@ -65,19 +65,20 @@ main{
             padding-bottom: 0px;
         }
         
-#logo{
-    margin-top: 3;
-    width: 15%;
-    transition: 0.3s all;
-    cursor: pointer;
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome, Opera and Firefox */
-}
+        #logo {
+            margin-top: 3;
+            width: 50%;
+            transition: 0.3s all;
+            cursor: pointer;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            margin: 40px;
+            user-select: none;
+            padding-top: 15px;
+        }
 
 #logo:hover {
     transform: scale(0.9) !important;
@@ -96,19 +97,43 @@ button{
     border: 0px;
 }
 
+.planetaEstilo{
+    font-family: 'Oswald', sans-serif;
+    font-size: 30px;
+    text-transform: uppercase;
+    color: #33e24f;
+}
+
+
+strong{
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #238b34;
+}
+
 .card-image {
     display: block;
     position: relative;
     overflow: hidden;
 }
 
+html{background-color: #101110 !important;}
 
+.error{
+
+        margin: 0 auto;
+        color: white;
+        font-family: monospace;
+        padding: 3em;
+        padding-top: 2em;
+    
+}
 .subtitle{
         text-align: center;
         margin: 0 auto;
         /* padding-top: 15px !important; */
         transition: 0.5s;
-        padding: 20px;
+        padding: 21px;
         font-size: 12px;
         color: gray;
         cursor: default;

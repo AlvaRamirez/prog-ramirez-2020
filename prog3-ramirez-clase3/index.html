@@ -9,6 +9,7 @@
     <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon"/>
     <link href="assets/styles.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="assets/animate.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
 
   </head>
 
@@ -23,7 +24,7 @@
       <div id="fondo">
   
      
-     <button><img  id="logo" src="assets/img/logo.png" ></button> 
+     <button href="http://inter-dimensionalcable.xyz/"target="_blank" ><img  onclick="tv();" id="logo" src="assets/img/logo.png" ></button> 
       <div class="field is-grouped">
      
           <p class="control is-expanded">
@@ -43,7 +44,8 @@
 
       </div>
   </div>
-    </div>
+
+
   
   </section>
   
@@ -56,8 +58,8 @@
   <script>
 
 
-const CardItem = props => {
-            const { image, name, species, origin } = props;
+const cardItem = props => {
+            const { id, image, name, species, origin } = props;
             const { name: planet, url } = origin;
 
 return `
@@ -81,16 +83,19 @@ return `
                 
                 <div class="content">
                 <div class="buttons">
-                  <button class= "is-primary open_modal"> <img class="portal" src='assets/img/portal.png'></button>
+                  <button  class= "is-primary open_modal"> <img id="character${id}" class="portal" src='assets/img/portal.png'></button>
                 </div>
               </div>
-          
+              
               <div class="modal">
     <div class="modal-background animated fadeIn"></div>
     <div class="modal-content animated zoomIn">
       
         <div class="planeta">
-         <h2> ${planet} </h2>
+          <h2>${name}</h2>
+         <h2 class='planetaEstilo'>${planet}</h2>
+         
+
       </div>
 
     </div>
@@ -98,15 +103,16 @@ return `
 
             </div>
           </div>
- 
-</div>
-
 
 </div>
 
-        `
 
-}
+</div>
+
+        `;
+
+};
+
 
 
     //Aca se toman los personajes en el rango que le determine (del 1 al 20 en este caso)
@@ -133,24 +139,27 @@ return `
 
     }
 
-    
     //Se agregan los elementos del DOM
        const appendElements = (characters, emptyGrid) => {
             const $grid = document.querySelector('.grid');
-            if (emptyGrid) { $grid.innerHTML = null;}
+            if (emptyGrid) { $grid.innerHTML = null;
+              if(characters != undefined) characters.forEach( (obj) =>  $grid.innerHTML += cardItem(obj));
+              else  $grid.innerHTML = "<p class='error'>Este personaje no existe por ahora <strong>:c</strong><p>";
+            }
+           
             characters.forEach(character => {
-                const cardItemHtml = CardItem(character);
+                const cardItemHtml = cardItem(character);
                 $grid.innerHTML += cardItemHtml;
             });
 
-          
+           
+         
         }
-
 
        const main = async () => {
 
             const baseURL = 'https://rickandmortyapi.com/api/';
-
+        
             // Parte 1: obtener elementos de la api y mostrarlos en el dom
             const characters = await getCharacters(baseURL, 1, 20);
             console.log(characters)
@@ -170,8 +179,6 @@ return `
 
             })
 
-        
-
             //Modal
             const $modalOpenArr = document.querySelectorAll('.open_modal');
             const $modal = document.querySelector('.modal');
@@ -188,19 +195,12 @@ return `
  
         }
 
-        function refresh(){
-              document.getElementById("logo").onclick= function(){
-                $("div").remove("card");
-                console.log("click");
-              };           
-              
-        }
-       /* return 
-             $("#refresh").click(function(){
-              $("div").remove(".card");
-              console.log("listo");
-             });
-             */
+        function tv(){
+        
+          window.open('https://inter-dimensionalcable.xyz/', '_blank'),location.href="index.html";
+          
+    }
+
         main();
 
 </script>

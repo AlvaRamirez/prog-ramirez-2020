@@ -1,0 +1,72 @@
+No falla:
+Arnaldo 
+Latitud: -34.50747 | Longitud: -58.48703
+
+Grido
+Latitud: -34.53258 | Longitud: -58.49078
+
+Nicolo
+Latitud: -34.581198 | Longitud: -58.426298
+
+Palmeiras
+Latitud: -34.632713 | Longitud: -58.462814
+
+Vanshelado
+Latitud: -34.61315 | Longitud: -58.37723
+
+
+
+Caras:
+Rapa Nui
+Latitud: -34.802574 | Longitud: -58.264084
+
+Freddo
+Latitud: -34.60424 | Longitud: -58.38772
+
+Luccianos
+Latitud: -34.589421 | Longitud: -58.429012
+
+Persicco
+Latitud: -34.589508 | Longitud: -58.429152
+
+Volta
+Latitud: -34.61315 | Longitud: -58.37723
+
+
+
+Veganos:
+Valence Recoleta
+Latitud: -34.594082 | Longitud: -58.392029
+
+Helados Daniel
+Latitud: -34.595098 | Longitud: -58.404187
+
+Veganius
+Latitud: -34.577335 | Longitud: -58.430626
+
+Chungo
+Latitud: -34.583216 | Longitud: -58.433686
+
+
+
+Sin Tacc:
+Daniel
+Latitud: -34.595098 | Longitud: -58.404187
+
+Cremolatti
+Latitud: -34.525711 | Longitud: -58.483001
+
+Munchi’s
+Latitud: -34.479322 | Longitud: -58.554215
+
+Freddo
+Latitud: -34.60424 | Longitud: -58.38772
+
+Persicco
+Latitud: -34.589508 | Longitud: -58.429152
+
+Guapaletas
+Latitud: -34.547766 | Longitud: -58.552059
+
+Rapa nui
+Latitud: -34.802574 | Longitud: -58.264084

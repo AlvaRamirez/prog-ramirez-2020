@@ -1,4 +1,4 @@
-
+let markersAll = [];
 
 window.initMap = () =>{
   // The location of Uluru
@@ -7,7 +7,7 @@ window.initMap = () =>{
   const map = new google.maps.Map(
       document.getElementById('map'), 
       {
-        zoom: 13,
+        zoom: 10,
 
         center: maimo,
         
@@ -31,7 +31,45 @@ window.initMap = () =>{
       });
       fetchMarkers(map)
 
-}
+
+    const handleFilterBarata = document.querySelector('.baratas');
+    const handleFilterChetas = document.querySelector('.chetas');
+    const handleFilterVeganas = document.querySelector('.veganas');
+    const handleFilterSinTacc = document.querySelector('.sinTacc');
+
+    //Eventos de click de los filtros
+    handleFilterBarata.addEventListener('click', (e) => {
+        e.preventDefault();
+        addMarkerFiltered('Baratas')
+    })
+    handleFilterChetas.addEventListener('click', (e) => {
+        e.preventDefault();
+        addMarkerFiltered('Chetas')
+    })
+    handleFilterVeganas.addEventListener('click', (e) => {
+        e.preventDefault();
+        addMarkerFiltered('Vegana')
+    })
+    handleFilterSinTacc.addEventListener('click', (e) => {
+        e.preventDefault();
+        addMarkerFiltered('Sin Tacc')
+    })
+
+    //Agrego los markers filtrados según filtro (markerType)
+    const addMarkerFiltered = (markerType) => {
+        console.log('clicked beer');
+      
+        markersAll.forEach((marker) => {
+            //console.log(marker)
+            marker.setMap(null); //Quita todos los markers del mapa
+        })
+        const markerFiltered = markersAll.filter((markerItem) => markerItem.customInfo === markerType)
+        markerFiltered.forEach((marker) => {
+            marker.setMap(map);
+        })
+    }
+}  
+
 
 const fetchMarkers = async (map) => {
 
@@ -62,40 +100,41 @@ const fetchMarkers = async (map) => {
         console.log(marker);
         const {lat,lng,name, description,type} = marker;
         const conetentString= `
-        <div>
+
+        
+        <div class="animated bounceIn">
         <h2>${name}</h2>
         <h3>${type}</h3>
         <p>${description}</p>
         </div>`;
 
-        const indoWindows= new google.maps.InfoWindow({
+        
+
+        const indoWindow= new google.maps.InfoWindow({
             content: conetentString
         });
 
         const icons={
-            'Birreria': 'assets/img/beer.png',
-            'Restaurant': 'assets/img/food.png',
-            'Barcito Cheto': 'assets/img/bar.png',
+            'Baratas': 'assets/img/baratas.png',
+            'Chetas': 'assets/img/chetas.png',
+            'Vegana': 'assets/img/veganas.png',
+            'Sin Tacc' : 'assets/img/sinTacc.png'
         }
-        const markerItem= new google.maps.Marker(
-            
-            { 
-            position:{lat: lat, lng:lng}, 
-            icon:icons[type],
-            map:map
-        
-        });
+        const markerItem = new google.maps.Marker(
+            {
+                position: { lat: lat, lng: lng },
+                icon: icons[type],
+                map: map,
+                customInfo: type
+            }
+        );
         markerItem.setMap(map);
-        markerItem.addListener('click', function(){
-            indoWindows.open(map,markerItem)
+        //Agrego evento de click en el marker, abre infowindow
+      markerItem.addListener ('click', function () {
+            indoWindow.open(map, markerItem);
         });
+        //Agrego mi nuevo marker (objeto marker, no json marker, a mi array para filtros)
+        markersAll.push(markerItem);
     }
 
-    const handleFilterBeer = document.querySelector('.beer');
-    const handleFilterBar = document.querySelector('.bar');
-    const handleFilterFood = document.querySelector('.food');
-    
-    handleFilterBeer.addEventListener('click'), (e)=>{
-        e.preventDefault();
-        addMarkerFilter()
-    }
+

@@ -100,16 +100,13 @@ const fetchMarkers = async (map) => {
         console.log(marker);
         const {lat,lng,name, description,type, web, img} = marker;
         const conetentString= `
-        <div class="control">
+      
         <div class="animated bounceIn">
         <h2>${name}</h2>
         <h3>${type}</h3>
-        <p>${description}</p>
+        <img class="imgHe" src="${img}"> 
+        <p>${description}</p> 
         <a href="${web}"  target="_blank" class="web">Contacto</a>
-        </div>
-        <div class="cont"> 
-        <img class="imgHe" src="${img}">
-        </div>
         </div>
         `;
 

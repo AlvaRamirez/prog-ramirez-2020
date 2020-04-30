@@ -31,13 +31,7 @@ body{padding: 0; margin:0;}
     display: none !important;
 }
 
-img{
-    transition: 0.3s all;
-}
 
-img:hover{
-    transform: scale(1.1) !important;
-}
 
 address{
     text-align: center;
@@ -79,6 +73,8 @@ address{
 .gm-style .gm-style-iw-d {
     box-sizing: border-box;
     overflow: auto !important;
+    display: contents !important;
+
 }
 
 .gm-style .gm-style-iw-c {
@@ -103,21 +99,27 @@ box-shadow: 0px 0px 10px 1px rgba(0,0,0,1);
     padding-top: 5px !important;
     padding-bottom: 5px !important;
     padding-left: 15px;
+    padding-right: 0px !important;
+    margin-right: 0% !important;
 }
 
 .web{
     text-decoration: none;
     color: #04c7c7;
+    float: right;
+    font-size: 12px;
+    margin: 4% 8%;
 
 }
 
 .cont{
     width: 60%;
-
+    margin: 0 auto;
+    text-align: center;
 }
 
 .animated{
-    width: 30% !important;
+    width: 100% !important;
 }
 
 .control{
@@ -125,28 +127,32 @@ box-shadow: 0px 0px 10px 1px rgba(0,0,0,1);
     display: flex;
 }
 
-.imgHe{
-    width: 50%;
-}
+
+    .imgHe {
+        width: 90%;
+        border-radius: 1em;
+    }
+
 
 .gm-style-iw-d{
     padding:14px;
 }
 
-h2{color: #ff9324;
+h2 {
+    color: #ff9324;
     text-transform: uppercase;
     margin-bottom: 4px;
+    font-size: 3em;
+    margin: 0 auto;
 }
 
-h3{
+h3 {
     color: #717171;
     margin: 0 auto;
-    font-size: 13px;
+    font-size: 15px;
+    margin-bottom: 2em;
 }
 
-p{
-    font-style: oblique;
-}
 
 .gm-ui-hover-effect{
 

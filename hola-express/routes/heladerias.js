@@ -113,9 +113,9 @@ const crudHeladerias = (app) => {
 
     app.post('/heladerias', addHeladeria);
          
-    app.put('/heladerias/:id', modificarHeladerias);
+    app.put('/heladeria/:id', modificarHeladerias);
          
-    app.delete('/heladerias/:id', deleteHeladeria);
+    app.delete('/heladeria/:id', deleteHeladeria);
 }
 
 module.exports = crudHeladerias;

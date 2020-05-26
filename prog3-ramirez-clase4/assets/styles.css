@@ -237,3 +237,21 @@ h3 {
     opacity: 100%;
     
 }
+
+.titu{font-size: 20px; color: black;text-decoration: none;font-style: normal;text-transform: none;font-weight: 700;}
+
+.btn{padding: 5px 15px;
+    margin: 5px;
+    border-radius: 90px;
+    color: #fff;
+    text-decoration: none;}
+
+.verde{background-color: green;}
+.azul{background-color: blue;}
+.rojo{background-color: red;}
+a:hover{opacity: .8;}
+
+#wrapper{padding: 50px 0 40px;}
+#btn_agregar_wrapper{display: flex; justify-content: flex-end; margin-bottom: 40px;}
+.inner{max-width: 1200px; margin: auto;}
+#listado .item{display: flex; justify-content: space-between;align-items: center;border-bottom: 3px solid #fafafa;margin-bottom: 30px;}

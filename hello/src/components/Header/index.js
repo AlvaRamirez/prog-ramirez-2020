@@ -1,5 +1,6 @@
 import React from 'react';
 import '../Header/index.css'
+import Boton from '../Boton'
 
 const Header = props => {
     return(
@@ -7,7 +8,7 @@ const Header = props => {
         <header className="App-header">
             {/* <img src={logo} className="App-logo" alt="logo" /> */}
             <p>
-                Edit <code>src/App.js</code> and save to reload.
+                Edit <code>src/App.js</code> and save to reload. <Boton caption='riki'/>
     </p>
             <a
                 className="App-link"

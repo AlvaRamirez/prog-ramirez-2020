@@ -62,7 +62,7 @@ class App extends React.Component {
     constructor() {
         super()
         //faker.seed(123);
-       // faker.locale = "ja";
+        //faker.locale = "ja";
         const employees = Array.from({ length: 30 }, () => ({
             name: faker.name.findName(),
             sector: faker.name.jobArea(),
@@ -82,12 +82,15 @@ class App extends React.Component {
             sectors: sectorsArray,
             dropdownActive: false,
             selectedSector: '',
-            employeeToEdit:{}
+            employeeToEdit: {},
+            employeeToEditName: '',
+            modalActive: false
 
         }
         this.handleEmpleadoMesClick = this.handleEmpleadoMesClick.bind(this) //Linea mounstrosa
         this.handleAddEmployeeSubmit = this.handleAddEmployeeSubmit.bind(this)
         this.handleAddEmployeeChange = this.handleAddEmployeeChange.bind(this)
+        this.handleEditEmployee = this.handleEditEmployee.bind(this)
     }
 
     handleEmpleadoMesClick(employeeId) {
@@ -110,7 +113,7 @@ class App extends React.Component {
     //NUEVO CLASE 2/3
     handleAddEmployeeSubmit = event => {
         event.preventDefault()
-        const { employees, employeeName } = this.state
+        const { employees, employeeName } = this.state //Leer del estado
 
         const newEmployee = {
             name: employeeName,
@@ -119,13 +122,16 @@ class App extends React.Component {
             id: faker.random.uuid(),
         }
         const newList = [newEmployee, ...employees] //Linea importante!
-        this.setState({ employees: newList })
+        this.setState({ 
+            employees: newList,
+            listBackup: newList
+         }) //Setear el estado
     }
 
     //NUEVO CLASE 2/3
     //Dropdown
     handleDropdownActive = () =>
-        this.setState(prevState => ({ dropdownActive: !prevState.dropdownActive }))
+        this.setState(prevState => ({ dropdownActive: !prevState.dropdownActive })) //Linea bardo
 
     //NUEVO CLASE 2/3
     handleSelectSector = sector => {
@@ -147,7 +153,42 @@ class App extends React.Component {
     handleRemoveEmployee = id => {
         const { employees } = this.state
         const listWithoutEmployee = employees.filter(employee => employee.id !== id)
-        this.setState({ employees: listWithoutEmployee })
+        this.setState({ employees: listWithoutEmployee, listBackup:listWithoutEmployee })
+
+    }
+    handleEditEmployee = id => {
+        const { employees } = this.state
+        const selectedEmployee = employees.find(employee => employee.id === id)
+        this.setState({
+            employeeToEdit: selectedEmployee,
+            modalActive: true,
+            employeeToEditName: selectedEmployee.name
+        })
+    }
+    handleModalClose = () => {
+        this.setState({ modalActive: false })
+    }
+    handleEmployeeEdit = (event) => {
+        event.preventDefault();
+        const { employeeToEdit, employees } = this.state
+        const listWithoutEmployee = employees.filter(employee => employee.id !== employeeToEdit.id)
+        this.setState({
+            employees: [employeeToEdit, ...listWithoutEmployee],
+            listBackup: [employeeToEdit, ...listWithoutEmployee],
+            modalActive: false
+        })
+
+
+    }
+
+    handleEditEmployeeName = (event) => {
+        const { value } = event.target
+        this.setState(prevState => (
+            {
+                employeeToEditName: value,
+                employeeToEdit: { ...prevState.employeeToEdit, name: value}
+            })
+        )
     }
 
     render() {
@@ -187,14 +228,23 @@ class App extends React.Component {
                         <div className='modal-card'>
                             <header className='modal-card-head'>
                                 <p className='modal-card-title'>Modal title</p>
-                                <button className='delete' aria-label='close' />
+                                <button className='delete' aria-label='close'
+                                    onClick={this.handleModalClose}
+                                />
                             </header>
                             <section className='modal-card-body'>
-                                <form className='form-add-employee'>
+                                <form className='form-add-employee'
+                                    onSubmit={this.handleEmployeeEdit}
+                                >
                                     <input
                                         className='input'
                                         type='text'
+                                        value={this.state.employeeToEditName}
+                                        onChange={this.handleEditEmployeeName}
                                     />
+                                    <button className='button is-success' type='submit'>
+                                        Actualizar
+                                    </button>
                                 </form>
                             </section>
                         </div>
@@ -202,13 +252,14 @@ class App extends React.Component {
                 )}
 
                 {
-                    this.state.employees.map((employee) =>
+                    employees.map((employee) =>
                         <EmployeeCard
                             employeeData={employee}
                             key={employee.id}
                             handleEmpleadoMesClick={this.handleEmpleadoMesClick}
                             empleadoDelMesID={this.state.empleadoDelMes}
                             handleRemoveEmployee={this.handleRemoveEmployee}
+                            handleEditEmployee={this.handleEditEmployee}
                         />
                     )
                 }

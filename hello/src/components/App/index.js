@@ -227,7 +227,7 @@ class App extends React.Component {
                         <div className='modal-background' />
                         <div className='modal-card'>
                             <header className='modal-card-head'>
-                                <p className='modal-card-title'>Modal title</p>
+                                <p className='modal-card-title'>Editar Empleado</p>
                                 <button className='delete' aria-label='close'
                                     onClick={this.handleModalClose}
                                 />

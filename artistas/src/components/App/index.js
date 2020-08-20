@@ -2,6 +2,7 @@ import React from 'react';
 import '../App/index.css';
 import Home from '../../pages/Home'
 import Artist from '../../pages/Artist'
+import Category from '../../pages/Category'
 import {
   BrowserRouter as Router,
   Switch,
@@ -11,16 +12,19 @@ import {
 
 function App() {
   return (
-  <Router>
+    <Router>
     <Switch>
-      <Route path="/artist/:id">
-        <Artist />
+        <Route path="/category/:catId">
+            <Category />
+        </Route>
+        <Route path="/artist/:id">
+            <Artist />
         </Route>
         <Route path="/">
-        <Home />
-      </Route>
+            <Home />
+        </Route>
     </Switch>
-  </Router>
+</Router>
   );
 }
 export default App;

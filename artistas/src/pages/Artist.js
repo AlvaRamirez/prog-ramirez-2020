@@ -1,19 +1,18 @@
 import React from 'react'
-import {useParams} from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Layout from '../containers/Layout'
-import MainArtist from '../components/MainArtists';
+import MainArtist from '../components/MainArtists'
 
 const Artist = () => {
+    const { id } = useParams();
 
-    const {id}=useParams();
-    return(
-        <div className='App'>
+    return (
+        <div className="App">
             <Layout>
-            <MainArtist/>
+                <MainArtist />
             </Layout>
         </div>
     )
-
 }
 
 export default Artist

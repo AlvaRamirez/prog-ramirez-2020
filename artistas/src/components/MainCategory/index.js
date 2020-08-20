@@ -2,7 +2,7 @@ import React, { useState , useEffect} from 'react'
 import Card from '../Card'
 import axios from 'axios'
 
-const Main = () => {
+const MainCategory = ({id}) => {
     console.log("hola")
     const [artist, setArtist] = useState([])
     
@@ -30,5 +30,4 @@ const Main = () => {
         </div>
     )
 }
-export default Main
-
+export default MainCategory

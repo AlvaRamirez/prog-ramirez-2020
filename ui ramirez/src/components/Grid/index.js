@@ -27,4 +27,4 @@ const Col = ({children, ...props}) =>{
     )
 }
 
-export default {Grid, Col}
+export {Grid, Col}
